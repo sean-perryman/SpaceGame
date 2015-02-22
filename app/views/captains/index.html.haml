@@ -1,0 +1,20 @@
+.container-fluid.well.col-md-8
+  %h1 Listing Captains
+  %table.table.table-striped
+    %thead
+      %tr
+        %th User
+        %th Name
+        %th World
+        %th{:colspan => "3"}
+    %tbody
+      - @captains.each do |captain|
+        %tr
+          %td= User.find_by_id(captain.user).username
+          %td= captain.name
+          %td= captain.world
+          %td= link_to 'Show', captain, :class => "btn btn-sm btn-default"
+          %td= link_to 'Edit', edit_captain_path(captain), :class => "btn btn-sm btn-default"
+          %td= link_to 'Destroy', captain, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger"
+
+  = link_to 'New Captain', new_captain_path, :class => "btn btn-sm btn-success"
