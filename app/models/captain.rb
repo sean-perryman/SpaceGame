@@ -3,5 +3,5 @@ class Captain < ActiveRecord::Base
 
   has_one :world
   has_one :cartel
-  
+  has_one :ship
 end

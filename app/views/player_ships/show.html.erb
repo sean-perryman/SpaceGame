@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Captain:</strong>
+  <%= @player_ship.captain %>
+</p>
+
+<p>
+  <strong>Ship:</strong>
+  <%= @player_ship.ship %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @player_ship.name %>
+</p>
+
+<p>
+  <strong>Fuel total:</strong>
+  <%= @player_ship.fuel_total %>
+</p>
+
+<p>
+  <strong>Fuel remaining:</strong>
+  <%= @player_ship.fuel_remaining %>
+</p>
+
+<p>
+  <strong>Cargo spaces:</strong>
+  <%= @player_ship.cargo_spaces %>
+</p>
+
+<p>
+  <strong>Fighters:</strong>
+  <%= @player_ship.fighters %>
+</p>
+
+<%= link_to 'Edit', edit_player_ship_path(@player_ship) %> |
+<%= link_to 'Back', player_ships_path %>

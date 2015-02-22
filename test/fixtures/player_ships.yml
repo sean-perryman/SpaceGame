@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  captain_id: 
+  ship_id: 
+  name: MyString
+  fuel_total: 1
+  fuel_remaining: 1
+  cargo_spaces: 1
+  fighters: 1
+
+two:
+  captain_id: 
+  ship_id: 
+  name: MyString
+  fuel_total: 1
+  fuel_remaining: 1
+  cargo_spaces: 1
+  fighters: 1
