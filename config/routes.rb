@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'ship/index'
-
-  resources :player_ships
-
-  resources :captains
-
-  resources :users
+  resources :ships, :worlds, :planets, :items, :player_ships, :captains, :users
 
   get "/log-in" => "sessions#new"
   post "/log-in" => "sessions#create"

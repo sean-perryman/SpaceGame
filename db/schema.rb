@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222060705) do
+ActiveRecord::Schema.define(version: 20150222161151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,10 @@ ActiveRecord::Schema.define(version: 20150222060705) do
     t.boolean  "planetary_defense"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.integer  "world_id"
   end
+
+  add_index "planets", ["world_id"], name: "index_planets_on_world_id", using: :btree
 
   create_table "player_ships", force: :cascade do |t|
     t.integer  "captain_id"
@@ -113,6 +116,7 @@ ActiveRecord::Schema.define(version: 20150222060705) do
   add_foreign_key "captains", "users"
   add_foreign_key "planet_inventories", "items"
   add_foreign_key "planet_inventories", "planets"
+  add_foreign_key "planets", "worlds"
   add_foreign_key "player_ships", "captains"
   add_foreign_key "player_ships", "ships"
   add_foreign_key "ship_inventories", "items"

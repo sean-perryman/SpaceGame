@@ -1,7 +1,7 @@
 class Captain < ActiveRecord::Base
   belongs_to :user
 
-  has_one :world
-  has_one :cartel
+  belongs_to :world
+  #has_one :cartel
   has_one :ship
 end

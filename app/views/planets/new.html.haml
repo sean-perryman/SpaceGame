@@ -1,0 +1,12 @@
+.container-fluid.well
+	.h1 New Planet
+
+	= simple_form_for @planet, html: { :class => 'col-md-6' } do |f|
+		= f.error_notification
+		
+		= f.input :name
+		= f.input :owned_by
+		= f.association :world
+		= f.input :planetary_defense
+
+		= f.button :submit, "Submit"
