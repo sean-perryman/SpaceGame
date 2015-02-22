@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @captain.user %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @captain.name %>
+</p>
+
+<p>
+  <strong>World:</strong>
+  <%= @captain.world %>
+</p>
+
+<p>
+  <strong>Cartel:</strong>
+  <%= @captain.cartel %>
+</p>
+
+<%= link_to 'Edit', edit_captain_path(@captain) %> |
+<%= link_to 'Back', captains_path %>
