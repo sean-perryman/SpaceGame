@@ -1,0 +1,2 @@
+class PlanetController < ApplicationController
+end

@@ -1,4 +1,4 @@
 class PlayerShip < ActiveRecord::Base
   belongs_to :captain
-  has_one :ship
+  belongs_to :ship
 end

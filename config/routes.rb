@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'ship/index'
+
   resources :player_ships
 
   resources :captains
