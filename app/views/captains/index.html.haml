@@ -1,5 +1,5 @@
 .container-fluid.well.col-md-8
-  %h1 Listing Captains
+  %h1 Listing All Captains
   %table.table.table-striped
     %thead
       %tr
@@ -12,7 +12,11 @@
         %tr
           %td= User.find_by_id(captain.user).username
           %td= captain.name
-          %td= captain.world
+          %td
+            -if World.find(captain.world)
+              =captain.world.name
+            -else
+              None
           %td= link_to 'Show', captain, :class => "btn btn-sm btn-default"
           %td= link_to 'Edit', edit_captain_path(captain), :class => "btn btn-sm btn-default"
           %td= link_to 'Destroy', captain, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger"

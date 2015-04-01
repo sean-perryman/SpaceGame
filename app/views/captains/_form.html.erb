@@ -1,14 +1,11 @@
-<%= simple_form_for(@captain) do |f| %>
-  <%= f.error_notification %>
+<div class="container well">
+	<%= simple_form_for(@captain) do |f| %>
+	  <%= f.error_notification %>
 
-  <div class="form-inputs">
     <%= f.association :user %>
     <%= f.input :name %>
     <%= f.association :world %>
-    
-  </div>
-
-  <div class="form-actions">
+   
     <%= f.button :submit %>
-  </div>
-<% end %>
+	<% end %>
+</div>

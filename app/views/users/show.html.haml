@@ -1,1 +1,14 @@
-Here needs to have a listing of all the associated captains with this user
+.container-fluid.well.col-md-8
+	%h4 Your Captains
+	%table.table.table-striped
+		%tr
+			%th Name
+			%th World
+		- @user.captains.each do |captain|
+			%tr
+				%td=captain.name
+				%td
+					-if captain.world_id
+						=captain.world.name
+					-else
+						None
