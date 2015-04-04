@@ -1,13 +1,16 @@
-.container-fluid.well.col-md-8
-	%h1 Listing All Items
+.container.well
+	.col-md-6
+		%h1 Listing All Items
 
-	%table.table.table-striped
-		%tr
-			%th Item Name
-			%th Base Price
-		- @items.each do |item|
+		%table.table.table-striped
 			%tr
-				%td
-					= link_to item.name, edit_item_path(item.id)
-				%td
-					= item.base_price
+				%th Item Name
+				%th Base Price
+			- @items.each do |item|
+				%tr
+					%td
+						= link_to item.name, edit_item_path(item.id)
+					%td
+						= item.base_price
+
+		= link_to "New Item", new_item_path, :class => "btn btn-default"

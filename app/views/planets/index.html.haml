@@ -1,19 +1,21 @@
-.container-fluid.well.col-md-6
-	%table.table.table-striped
-		%th Planet Name
-		%th World
-		%th Owned By
-		%th Planetary Defense Enabled?
-		- @planets.each do |planet|
-			%tr
-				%td
-					= link_to planet.name, edit_planet_path(planet.id)
-				%td
-					= World.find(planet.world_id).name
-				%td
-					- if Captain.find_by_id(planet.owned_by) != nil
-						= Captain.find(planet.owned_by).name
-					- else
-						No one
-				%td
-					= planet.planetary_defense
+.container-fluid.well
+	.col-md-6
+		%table.table.table-striped
+			%th Planet Name
+			%th World
+			%th Owned By
+			%th Planetary Defense Enabled?
+			- @planets.each do |planet|
+				%tr
+					%td
+						= link_to planet.name, edit_planet_path(planet.id)
+					%td
+						= World.find(planet.world_id).name
+					%td
+						- if Captain.find_by_id(planet.owned_by) != nil
+							= Captain.find(planet.owned_by).name
+						- else
+							No one
+					%td
+						= planet.planetary_defense
+		= link_to "New Planet", new_planet_path, :class => "btn btn-default"

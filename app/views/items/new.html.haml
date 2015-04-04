@@ -1,10 +1,5 @@
-.container-fluid.well
-	.h1 New Item
+.container.well
+	.col-md-6
+		.h1 New Item
 
-	= simple_form_for @item, html: { :class => 'col-md-6' } do |f|
-		= f.error_notification
-		
-		= f.input :name
-		= f.input :base_price
-
-		= f.button :submit, "Submit"
+		= render "form"
