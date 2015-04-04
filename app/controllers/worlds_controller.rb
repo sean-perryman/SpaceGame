@@ -1,10 +1,11 @@
 class WorldsController < ApplicationController
+  before_action :set_world, only: [:show, :edit, :update, :destroy]
+
   def index
   	@worlds = World.all
   end
 
   def show
-  	@world = World.find(params[:id])
   end
 
   def new

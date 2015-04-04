@@ -1,10 +1,11 @@
 class ShipsController < ApplicationController
+  before_action :set_ship, only: [:show, :edit, :update, :destroy]
+
   def index
   	@ships = Ship.all
   end
 
   def show
-  	@ship = Ship.find(params[:id])
   end
 
   def new

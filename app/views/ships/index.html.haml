@@ -5,4 +5,5 @@
 				%tr
 					%td= ship.name
 					%td= link_to "View", ship, :class => "btn btn-sm btn-default"
+					%td= link_to "Edit", edit_ship_path(ship), :class => "btn btn-sm btn-default"
 		= link_to "New Ship", new_ship_path, :class => "btn btn-default"

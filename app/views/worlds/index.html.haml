@@ -6,5 +6,6 @@
 			- @worlds.each do |world|
 				%tr
 					%td= world.name
+					%td= link_to "Edit", edit_world_path(world), :class => "btn btn-sm btn-default"
 
 		= link_to "New World", new_world_path, :class => "btn btn-default"

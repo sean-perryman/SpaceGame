@@ -1,27 +1,4 @@
 .container.well
   .col-md-6
     %table.table
-    = simple_form_for(@ship) do |f|
-      = f.error_notification
-      %tr
-        %td= f.input :name
-      %tr  
-        %td= f.input :base_fuel, :label => "Standard Jump Reactor Power"
-      %tr
-        %td= f.input :reactor_upgrades
-      %tr
-        %td= f.input :torpedo_bays
-      %tr
-        %td= f.input :base_cargo, :label => "Base Cargo Spaces Included"
-      %tr
-        %td= f.input :max_cargo, :label => "Max Cargo Spaces"
-      %tr
-        %td= f.input :ship_fighting_odds
-      %tr
-        %td= f.input :max_fighters
-      %tr
-        %td= f.input :max_shields
-      %tr
-        %td= f.input :cost
-      %tr
-        %td= f.button :submit, :class => "btn btn-success"
+      = render "form"
