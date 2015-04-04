@@ -1,0 +1,8 @@
+.container.well
+	.col-md-6
+		%table.table
+			= simple_form_for(@world) do |f|
+				= f.error_notification
+				= f.input :name
+
+				= f.button :submit, :class => "btn btn-success"
