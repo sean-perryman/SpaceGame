@@ -1,0 +1,32 @@
+.container.well
+  .col-md-6
+    %table.table.table-striped
+      %tr 
+        %td Name
+        %td= @ship.name
+      %tr
+        %td Base Reactor
+        %td= @ship.base_fuel
+      %tr
+        %td Reactor Upgrades Available
+        %td= @ship.reactor_upgrades
+      %tr
+        %td Torpedo Bays
+        %td= @ship.torpedo_bays
+      %tr
+        %td Base Cargo
+        %td= @ship.base_cargo
+      %tr
+        %td Max Cargo
+        %td= @ship.max_cargo
+      %tr
+        %td Ship Fighting Odds
+        %td= @ship.ship_fighting_odds
+      %tr
+        %td Max Fighters
+        %td= @ship.max_fighters
+      %tr
+        %td Max Shields
+        %td= @ship.max_shields
+    = link_to "Back", ships_path, :class => "btn btn-default"
+    = link_to "New Ship", new_ship_path, :class => "btn btn-default"

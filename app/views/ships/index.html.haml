@@ -1,0 +1,8 @@
+.container.well
+	.col-md-6
+		%table.table.table-striped
+			- @ships.each do |ship|
+				%tr
+					%td= ship.name
+					%td= link_to "View", ship, :class => "btn btn-sm btn-default"
+		= link_to "New Ship", new_ship_path, :class => "btn btn-default"
