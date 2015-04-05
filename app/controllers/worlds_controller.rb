@@ -6,6 +6,7 @@ class WorldsController < ApplicationController
   end
 
   def show
+    @planets = @world.planets.all
   end
 
   def new

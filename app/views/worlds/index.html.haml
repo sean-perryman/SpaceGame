@@ -6,6 +6,7 @@
 			- @worlds.each do |world|
 				%tr
 					%td= world.name
-					%td= link_to "Edit", edit_world_path(world), :class => "btn btn-sm btn-default"
-
+					%td= link_to 'Show', world, :class => "btn btn-sm btn-default"
+					%td= link_to 'Edit', edit_world_path(world), :class => "btn btn-sm btn-default"
+					%td= link_to 'Destroy', world, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger"
 		= link_to "New World", new_world_path, :class => "btn btn-default"

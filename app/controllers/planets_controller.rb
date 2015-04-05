@@ -1,5 +1,5 @@
 class PlanetsController < ApplicationController
-  before_action :set_planet, only: [:edit, :update, :destroy]
+  before_action :set_planet, only: [:show, :edit, :update, :destroy]
 
   def index
   	@planets = Planet.all
@@ -32,9 +32,23 @@ class PlanetsController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @planet.update(planet_params)
+        format.html { redirect_to @planet, notice: 'Planet was successfully updated.' }
+        format.json { render :show, status: :ok, location: @planet }
+      else
+        format.html { render :edit }
+        format.json { render json: @planet.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
+    @planet.destroy
+    respond_to do |format|
+      format.html { redirect_to planets_url, notice: 'Planet was successfully removed.' }
+      format.json { head :no_content }
+    end
   end
 
   private

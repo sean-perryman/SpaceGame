@@ -17,7 +17,7 @@ class PlanetInventoriesController < ApplicationController
 
     respond_to do |format|
       if @planet_inventory.save
-        format.html { redirect_to new_planet_inventory_path, notice: 'planet_inventory was successfully created.' }
+        format.html { redirect_to new_planet_inventory_path, notice: 'Inventory item was successfully created.' }
         format.json { render :show, status: :created, location: @planet_inventory }
       else
         format.html { render :new }
@@ -32,7 +32,7 @@ class PlanetInventoriesController < ApplicationController
   def update
     respond_to do |format|
       if @planet_inventory.update(planet_inventory_params)
-        format.html { redirect_to @planet_inventory, notice: 'Planet inventory was successfully updated.' }
+        format.html { redirect_to @planet_inventory, notice: 'Inventory item was successfully updated.' }
         format.json { render :show, status: :ok, location: @planet_inventory }
       else
         format.html { render :edit }
@@ -42,11 +42,16 @@ class PlanetInventoriesController < ApplicationController
   end
 
   def destroy
+    @planet_inventory.destroy
+    respond_to do |format|
+      format.html { redirect_to planet_inventories_url, notice: 'Inventory item was successfully removed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_item
+    def set_planet_inventory
       @planet_inventory = PlanetInventory.find(params[:id])
     end
 

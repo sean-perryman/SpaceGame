@@ -13,4 +13,7 @@
 					%td= pi.item.name
 					%td= pi.amount
 					%td= pi.item_price(pi.item, pi.price_modifier)
+					%td= link_to 'Show', pi, :class => "btn btn-sm btn-default"
+					%td= link_to 'Edit', edit_planet_inventory_path(pi), :class => "btn btn-sm btn-default"
+					%td= link_to 'Destroy', pi, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-sm btn-danger"
 		= link_to "New Inventory Item", new_planet_inventory_path, :class => "btn btn-default"
