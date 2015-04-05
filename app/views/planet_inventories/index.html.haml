@@ -1,0 +1,16 @@
+.container.well
+	.col-md-6
+		%h3 Planet Inventory
+		%table.table.table-striped
+			%tr
+				%td Planet
+				%td Item
+				%td Amount
+				%td Price
+			- @planet_inventories.each do |pi|
+				%tr	
+					%td= pi.planet.name
+					%td= pi.item.name
+					%td= pi.amount
+					%td= pi.item_price(pi.item, pi.price_modifier)
+		= link_to "New Inventory Item", new_planet_inventory_path, :class => "btn btn-default"

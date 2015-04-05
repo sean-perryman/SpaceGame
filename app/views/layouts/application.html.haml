@@ -32,6 +32,7 @@
 										%li= link_to "Planets", planets_path
 										%li= link_to "Ships", ships_path
 										%li= link_to "Items", items_path
+										%li= link_to "Player Ships", player_ships_path
 					%ul.nav.navbar-nav.navbar-right
 						- if user_signed_in?
 							%li= link_to "Logged in as #{current_user.username}", edit_user_path(current_user.id)

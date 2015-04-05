@@ -1,0 +1,27 @@
+.container.well
+  .col-md-6
+    %table.table.table-striped
+      %tr
+        %td Captain:
+        %td= @player_ship.captain.name
+      %tr
+        %td Ship Type:
+        %td= @player_ship.ship.name
+      %tr
+        %td Ship Name:
+        %td= @player_ship.name
+      %tr
+        %td Fuel total:
+        %td= @player_ship.fuel_total
+      %tr
+        %td Fuel remaining:
+        %td= @player_ship.fuel_remaining
+      %tr
+        %td Cargo spaces:
+        %td= @player_ship.cargo_spaces
+      %tr
+        %td Fighters:
+        %td= @player_ship.fighters
+    
+    = link_to 'Edit', edit_player_ship_path(@player_ship), :class => "btn btn-default"
+    = link_to 'Back', player_ships_path, :class => "btn btn-default"

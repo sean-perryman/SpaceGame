@@ -1,0 +1,9 @@
+= simple_form_for @planet_inventory do |f|
+	= f.error_notification
+	
+	= f.association :planet
+	= f.association :item
+	= f.input :amount
+	= f.input :price_modifier
+
+	= f.button :submit

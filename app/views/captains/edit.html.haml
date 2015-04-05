@@ -1,0 +1,9 @@
+.container.well
+	.col-md-6
+		%h1 Editing Captain
+
+		= render 'form'
+		%br/
+		
+		= link_to 'Back', captains_path, :class => "btn btn-default"
+		= link_to 'Show', @captain, :class => "btn btn-default"

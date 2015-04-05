@@ -1,0 +1,11 @@
+= simple_form_for(@player_ship) do |f|
+  = f.error_notification
+  = f.association :captain
+  = f.association :ship
+  = f.input :name
+  = f.input :fuel_total
+  = f.input :fuel_remaining
+  = f.input :cargo_spaces
+  = f.input :fighters
+
+  = f.button :submit

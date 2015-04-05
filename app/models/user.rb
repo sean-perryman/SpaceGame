@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
 	before_save :encrypt_password, :unless => Proc.new { |u| u.password.blank? }
 	before_save { self.email = email.downcase }
 
+	def to_s
+		self.username
+	end
+
 	def encrypt_password
 		self.password_salt = BCrypt::Engine.generate_salt
 		self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)

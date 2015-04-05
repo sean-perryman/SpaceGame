@@ -1,0 +1,8 @@
+.container.well
+	.col-md-6
+		%h1 Editing Player Ship
+		= render 'form'
+
+		%br/
+		= link_to 'Show', @player_ship, :class => "btn btn-default"
+		= link_to 'Back', player_ships_path, :class => "btn btn-default"
